@@ -1,0 +1,111 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+	text-align: center;
+	min-height: 500px;
+
+	.colorModeContainer {
+		position: relative;
+
+		.hero {
+			max-width: 200px;
+			border-radius: 50%;
+			object-fit: cover;
+			overflow: hidden;
+		}
+
+		.colorMode {
+			position: absolute;
+			right: 15px;
+			width: 35px;
+		}
+
+		.colorMode:hover {
+			cursor: pointer;
+		}
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.description {
+			max-width: 24ch;
+			margin: 0 auto;
+		}
+
+		.resume {
+			width: fit-content;
+			align-self: center;
+
+			button {
+				background-color: var(--btn-color);
+				color: var(--btn-text-color);
+				border: none;
+				border-radius: 20px;
+				width: 126px;
+				height: 50px;
+				font-size: 20px;
+				font-weight: bold;
+				box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+				transition: box-shadow 200ms ease-in-out, transform 200ms ease-in-out;
+			}
+
+			button:hover {
+				transform: scale(1.05);
+			}
+
+			button:active {
+				transform: translateY(2px);
+				box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+
+	.socials {
+		display: flex;
+		gap: 25px;
+		justify-content: center;
+		margin: 20px;
+
+		img {
+			width: 40px;
+			transition: transform 200ms ease-in-out;
+		}
+
+		img:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+@media (width >= 800px) {
+	.container {
+		flex-direction: row-reverse;
+		align-items: flex-start;
+		justify-content: space-evenly;
+		margin-bottom: 0;
+
+		.colorModeContainer {
+			.hero {
+				max-width: 350px;
+				width: 350px;
+			}
+			.colorMode {
+				right: 0;
+			}
+		}
+	}
+}
+
+@media (width >= 1400px) {
+	.container {
+		.colorModeContainer .hero {
+			max-width: 400px;
+			width: 400px;
+		}
+	}
+}

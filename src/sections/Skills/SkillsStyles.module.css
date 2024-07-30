@@ -1,0 +1,65 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.skillList {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+
+hr {
+	width: 100px;
+	height: 1px;
+	border: none;
+	background-color: var(--text-color);
+	margin: 30px auto;
+}
+
+@media (min-width: 480px) {
+	.skillList {
+		grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+	}
+	hr {
+		width: 200px;
+		margin: 40px auto;
+	}
+}
+
+@media (min-width: 768px) {
+	.skillList {
+		grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+	}
+}
+
+@media (min-width: 992px) {
+	.skillList {
+		grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+		justify-content: space-between;
+	}
+
+	hr {
+		width: 300px;
+		margin: 50px auto;
+	}
+
+	p {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.skillList {
+		grid-template-columns: repeat(5, 1fr); /* 5 columns for extra-large screens */
+	}
+
+	hr {
+		margin: 60px auto;
+	}
+}
